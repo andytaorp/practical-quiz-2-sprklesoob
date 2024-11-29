@@ -15,7 +15,7 @@ export default function Form({ addTask }) {
       quantity,
       done: false
     };
-    handleAddTask(addTask);
+    addTask(addTask);
     setDescription("");
     setQuantity(1);
   }

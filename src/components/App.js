@@ -6,13 +6,13 @@ import Task from "./Task";
 function App() {
   const [tasks, setTasks] = useState([]);
 
-  const handleAddTask = (addTask) => {
+  const handleAddTask = (task) => {
     setTasks((prevTasks) => [...prevTasks, task]);
   }
 
   const handleToggleTask = (id) => {
    setTasks((prevTasks) => prevTasks.map((task) => 
-   item.id === id ? {...task, done: !task.done} : task));
+   task.id === id ? {...task, done: !task.done} : task));
   }
 
   const handleDeleteTask = (id) => {
@@ -55,15 +55,11 @@ function App() {
   return (
     <div className="app">
       <h1>Task Tracker</h1>
-      <Logo />
       <Form onAddItem={handleAddTask} />
       <TaskList 
-      items={items}
+      tasks={tasks}
       onDeleteItem={handleDeleteTask}
       onUpdateItem={handleToggleTask}
-      />
-      <Stats 
-      tasks={tasks}
       />
     </div>
   );

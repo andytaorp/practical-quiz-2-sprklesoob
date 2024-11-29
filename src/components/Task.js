@@ -1,6 +1,6 @@
 import React from "react";
 
-function Task({ task, onToggleTask, onDeleteTask }) {
+export default function Task({ task, onToggleTask, onDeleteTask }) {
     return (
       <li>
         <input
@@ -37,21 +37,4 @@ function Task({ task, onToggleTask, onDeleteTask }) {
   );
 }
 
-function Stats({tasks}) {
-    const numTasks = tasks.length;
-    const numDone = tasks.filter((task) => task.done).length;
-    const percentage = Math.round((numDone/numTasks) * 100);
-  
-    return (
-      <footer className="stats">
-        <em>
-          {percentage === 100
-          ? "You got everything!"
-          : `You have ${numTasks} items in the list. You already packed ${numPacked} ${percentage}%).`}
-        </em>
-      </footer>
-    );
-  }
 
-export default function Task() {}
-export default function Stats() {}
